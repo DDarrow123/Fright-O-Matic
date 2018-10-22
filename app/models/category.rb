@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :pranks
-  has_many :words
+  has_many :madlibs
+  has_many :pranks, through: :madlibs
 end

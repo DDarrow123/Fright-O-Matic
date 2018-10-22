@@ -1,3 +1,3 @@
 class Word < ApplicationRecord
-  belongs_to :categories
+  belongs_to :madlib
 end

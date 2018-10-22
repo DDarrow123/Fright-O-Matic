@@ -1,4 +1,4 @@
 class Prank < ApplicationRecord
-  belongs_to :user
-  has_many :categories
+  has_many :madlibs
+  has_many :categories, through: :madlibs
 end

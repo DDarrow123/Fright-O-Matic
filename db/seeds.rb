@@ -6,41 +6,155 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-word_hash: { nouns:{25: "bloodlust", "corruption", "hellbound", "eeriness", "monstrosity", "grotesqueness"} ,
-                    {15: "frankenstein", "gruesome", "graveyard", "darkness", "ghostlier", "nightmare"},
-          adjectives: {25: "motionless", "unwashed", "blooodless", "gnarled", "omninous", "quaking"},
-                              {15: "screaming", "rabid", "putrid", "rough", "silent", "immortal"},
-          verbs: {25: "wails", "possesses", "enchants", "bewitches", "paralyzes", "shapeshifts"},
-                  {15: "scares", "shovels", "trembles", "reeks", "scratches", "pours"}
-                }
-
 Category.create(theme: "witches")
 Category.create(theme: "ghosts")
 Category.create(theme: "serial killer")
 Category.create(theme: "dolls/puppets")
 
-Word.create(name: "bloodlust", value: 25, type:"noun", category_id: 1)
+Prank.create(name: "witches", snippet:"Potion to prank your victim")
+Prank.create(name: "ghosts", snippet:"Summon a spirit")
+Prank.create(name: "serial_killers", snippet:"Give your victim a nigtmare-ish prank")
+Prank.create(name: "dolls", snippet:"Prank chucky-style")
+
+Madlib.create(prank_id: 1, category_id: 1)
+Madlib.create(prank_id: 2, category_id: 2)
+Madlib.create(prank_id: 3, category_id: 3)
+Madlib.create(prank_id: 4, category_id: 4)
 
 
-"Witches"
-"To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.
-Stir to a boil. Pour the finished potion on your victim. The prankee verb  as your potion changes this person into the noun creature,
-your victim adjective while you are overcome with glee.
-The noun, adjective state in which you have left your victim should only last a day or two."
+Word.create(name: "bloodlust", value: 25, w_type:"noun", madlib_id: 1)
+Word.create(name: "grotesqueness", value: 25, w_type:"noun", madlib_id: 1)
+Word.create(name: "frankenstein", value: 25, w_type:"noun", madlib_id: 1)
+Word.create(name: "monstrosity", value: 25, w_type:"noun", madlib_id: 1)
+Word.create(name: "straw-like", value: 25, w_type:"noun", madlib_id: 1)
+Word.create(name: "ghostlier", value: 15, w_type:"noun", madlib_id: 1)
+Word.create(name: "ugly", value: 15, w_type:"noun", madlib_id: 1)
+Word.create(name: "wart", value: 15, w_type:"noun", madlib_id: 1)
+Word.create(name: "hair", value: 15, w_type:"noun", madlib_id: 1)
+Word.create(name: "enchanter", value: 15, w_type:"noun", madlib_id: 1)
 
-"Ghosts"
-"To initiate this prank summon a not so friendly spirit. Get both your victim and your spirit in a non-escapable room.
-The spiritwill first __verb__ your victim __verb__.
-He then __verb__ in a __adjective__ fashion while he __verb__ your victim for the cherry on top.
+Word.create(name: "gnarled", value: 25, w_type:"adjective", madlib_id: 1)
+Word.create(name: "omninous", value: 25, w_type:"adjective", madlib_id: 1)
+Word.create(name: "quaked", value: 25, w_type:"adjective", madlib_id: 1)
+Word.create(name: "malevolent", value: 25, w_type:"adjective", madlib_id: 1)
+Word.create(name: "vindictive", value: 25, w_type:"adjective", madlib_id: 1)
+Word.create(name: "old", value: 15, w_type:"adjective", madlib_id: 1)
+Word.create(name: "odd", value: 15, w_type:"adjective", madlib_id: 1)
+Word.create(name: "horrible", value: 15, w_type:"adjective", madlib_id: 1)
+Word.create(name: "cruel", value: 15, w_type:"adjective", madlib_id: 1)
+Word.create(name: "vain", value: 15, w_type:"adjective", madlib_id: 1)
 
-"Dolls
-"To scare a friend or foe, unleash this prank using a frightening or average-looking doll:
-Place your ___adjective___ doll of choice in a locker, desk, or other ___adjective___ area of your chosen ____noun____ place.
-Wait for this person to discover the doll and ___verb___ while you watch, smile spreading across your ___noun___ face."``
+Word.create(name: "enchants", value: 25, w_type:"verb", madlib_id: 1)
+Word.create(name: "bewitches", value: 25, w_type:"verb", madlib_id: 1)
+Word.create(name: "possesses", value: 25, w_type:"verb", madlib_id: 1)
+Word.create(name: "shapeshifts", value: 25, w_type:"verb", madlib_id: 1)
+Word.create(name: "attacks", value: 25, w_type:"verb", madlib_id: 1)
+Word.create(name: "runs", value: 15, w_type:"verb", madlib_id: 1)
+Word.create(name: "screams", value: 15, w_type:"verb", madlib_id: 1)
+Word.create(name: "barks", value: 15, w_type:"verb", madlib_id: 1)
+Word.create(name: "barfs", value: 15, w_type:"verb", madlib_id: 1)
+Word.create(name: "shakes", value: 15, w_type:"verb", madlib_id: 1)
 
-"Serial Killer"
-"To scare the living daylights out of your chosen victim, follow these steps for a satisfyingly scary prank:
-Find a gruesome or ___adjective___ mask or hooded __adjective___ to wear along with a fake weapon of choice.
-Try a ___noun___ chainsaw, knife, or weapon of choice. You jump out as your ___adjective___ victim approaches.
-Enjoy the feeling of him/her being thoroughly frightened at your presence and maybe even __verb__ away at full speed."
+
+
+Word.create(name: "ghostlier", value: 25, w_type:"noun", madlib_id: 2)
+Word.create(name: "eeriness", value: 25, w_type:"noun", madlib_id: 2)
+Word.create(name: "frankenstein", value: 25, w_type:"noun", madlib_id: 2)
+Word.create(name: "monstrosity", value: 25, w_type:"noun", madlib_id: 2)
+Word.create(name: "bloodlust", value: 25, w_type:"noun", madlib_id: 2)
+Word.create(name: "ghostlier", value: 15, w_type:"noun", madlib_id: 2)
+Word.create(name: "ugly", value: 15, w_type:"noun", madlib_id: 2)
+Word.create(name: "wart", value: 15, w_type:"noun", madlib_id: 2)
+Word.create(name: "bald", value: 15, w_type:"noun", madlib_id: 2)
+Word.create(name: "morbid", value: 15, w_type:"noun", madlib_id: 2)
+
+Word.create(name: "gnarled", value: 25, w_type:"adjective", madlib_id: 2)
+Word.create(name: "omninous", value: 25, w_type:"adjective", madlib_id: 2)
+Word.create(name: "quaked", value: 25, w_type:"adjective", madlib_id: 2)
+Word.create(name: "malevolent", value: 25, w_type:"adjective", madlib_id: 2)
+Word.create(name: "vindictive", value: 25, w_type:"adjective", madlib_id: 2)
+Word.create(name: "old", value: 15, w_type:"adjective", madlib_id: 2)
+Word.create(name: "odd", value: 15, w_type:"adjective", madlib_id: 2)
+Word.create(name: "horrible", value: 15, w_type:"adjective", madlib_id: 2)
+Word.create(name: "cruel", value: 15, w_type:"adjective", madlib_id: 2)
+Word.create(name: "vain", value: 15, w_type:"adjective", madlib_id: 2)
+
+Word.create(name: "enchants", value: 25, w_type:"verb", madlib_id: 2)
+Word.create(name: "bewitches", value: 25, w_type:"verb", madlib_id: 2)
+Word.create(name: "possesses", value: 25, w_type:"verb", madlib_id: 2)
+Word.create(name: "shapeshifts", value: 25, w_type:"verb", madlib_id: 2)
+Word.create(name: "attacks", value: 25, w_type:"verb", madlib_id: 2)
+Word.create(name: "runs", value: 15, w_type:"verb", madlib_id: 2)
+Word.create(name: "screams", value: 15, w_type:"verb", madlib_id: 2)
+Word.create(name: "trembles", value: 15, w_type:"verb", madlib_id: 2)
+Word.create(name: "scratches", value: 15, w_type:"verb", madlib_id: 2)
+Word.create(name: "shakes", value: 15, w_type:"verb", madlib_id: 2)
+
+
+Word.create(name: "assassin", value: 25, w_type:"noun", madlib_id: 3)
+Word.create(name: "troublemaker", value: 25, w_type:"noun", madlib_id: 3)
+Word.create(name: "eliminator", value: 25, w_type:"noun", madlib_id: 3)
+Word.create(name: "bloodluster", value: 25, w_type:"noun", madlib_id: 3)
+Word.create(name: "bloodlust", value: 25, w_type:"noun", madlib_id: 3)
+Word.create(name: "enforcer", value: 15, w_type:"noun", madlib_id: 3)
+Word.create(name: "slayer", value: 15, w_type:"noun", madlib_id: 3)
+Word.create(name: "attacker", value: 15, w_type:"noun", madlib_id: 3)
+Word.create(name: "villain", value: 15, w_type:"noun", madlib_id: 3)
+Word.create(name: "rebel", value: 15, w_type:"noun", madlib_id: 3)
+
+Word.create(name: "evil", value: 25, w_type:"adjective", madlib_id: 3)
+Word.create(name: "coldblooded", value: 25, w_type:"adjective", madlib_id: 3)
+Word.create(name: "deranged", value: 25, w_type:"adjective", madlib_id: 3)
+Word.create(name: "psychopathic", value: 25, w_type:"adjective", madlib_id: 3)
+Word.create(name: "ruthless", value: 25, w_type:"adjective", madlib_id: 3)
+Word.create(name: "crafty", value: 15, w_type:"adjective", madlib_id: 3)
+Word.create(name: "inhuman", value: 15, w_type:"adjective", madlib_id: 3)
+Word.create(name: "savage", value: 15, w_type:"adjective", madlib_id: 3)
+Word.create(name: "vicious", value: 15, w_type:"adjective", madlib_id: 3)
+Word.create(name: "foul", value: 15, w_type:"adjective", madlib_id: 3)
+
+Word.create(name: "searches", value: 25, w_type:"verb", madlib_id: 3)
+Word.create(name: "possesses", value: 25, w_type:"verb", madlib_id: 3)
+Word.create(name: "bewitches", value: 25, w_type:"verb", madlib_id: 3)
+Word.create(name: "punches", value: 25, w_type:"verb", madlib_id: 3)
+Word.create(name: "strikes", value: 25, w_type:"verb", madlib_id: 3)
+Word.create(name: "hunts", value: 15, w_type:"verb", madlib_id: 3)
+Word.create(name: "howls", value: 15, w_type:"verb", madlib_id: 3)
+Word.create(name: "eats", value: 15, w_type:"verb", madlib_id: 3)
+Word.create(name: "scares", value: 15, w_type:"verb", madlib_id: 3)
+Word.create(name: "shovels", value: 15, w_type:"verb", madlib_id: 3)
+
+
+
+Word.create(name: "assassin", value: 25, w_type:"noun", madlib_id: 4)
+Word.create(name: "eeriness", value: 25, w_type:"noun", madlib_id: 4)
+Word.create(name: "eliminator", value: 25, w_type:"noun", madlib_id: 4)
+Word.create(name: "marionette", value: 25, w_type:"noun", madlib_id: 4)
+Word.create(name: "monstrosity", value: 25, w_type:"noun", madlib_id: 4)
+Word.create(name: "puppet", value: 15, w_type:"noun", madlib_id: 4)
+Word.create(name: "slayer", value: 15, w_type:"noun", madlib_id: 4)
+Word.create(name: "attacker", value: 15, w_type:"noun", madlib_id: 4)
+Word.create(name: "mannequin", value: 15, w_type:"noun", madlib_id: 4)
+Word.create(name: "creeper", value: 15, w_type:"noun", madlib_id: 4)
+
+Word.create(name: "porcelain", value: 25, w_type:"adjective", madlib_id: 4)
+Word.create(name: "cunning", value: 25, w_type:"adjective", madlib_id: 4)
+Word.create(name: "motionless", value: 25, w_type:"adjective", madlib_id: 4)
+Word.create(name: "blooodless", value: 25, w_type:"adjective", madlib_id: 4)
+Word.create(name: "mesmerizing", value: 25, w_type:"adjective", madlib_id: 4)
+Word.create(name: "wicked", value: 15, w_type:"adjective", madlib_id: 4)
+Word.create(name: "delicate", value: 15, w_type:"adjective", madlib_id: 4)
+Word.create(name: "vicious", value: 15, w_type:"adjective", madlib_id: 4)
+Word.create(name: "dark", value: 15, w_type:"adjective", madlib_id: 4)
+Word.create(name: "evil", value: 15, w_type:"adjective", madlib_id: 4)
+
+Word.create(name: "possesses", value: 25, w_type:"verb", madlib_id: 4)
+Word.create(name: "mystifies", value: 25, w_type:"verb", madlib_id: 4)
+Word.create(name: "gargles", value: 25, w_type:"verb", madlib_id: 4)
+Word.create(name: "scrounges", value: 25, w_type:"verb", madlib_id: 4)
+Word.create(name: "bulldozes", value: 25, w_type:"verb", madlib_id: 4)
+Word.create(name: "hides", value: 15, w_type:"verb", madlib_id: 4)
+Word.create(name: "attacks", value: 15, w_type:"verb", madlib_id: 4)
+Word.create(name: "scares", value: 15, w_type:"verb", madlib_id: 4)
+Word.create(name: "scratches", value: 15, w_type:"verb", madlib_id: 4)
+Word.create(name: "climbs", value: 15, w_type:"verb", madlib_id: 4)
