@@ -1,6 +1,8 @@
-<%= form_for @madlib do |f| %>
-<p><%= f.label :noun %>
+<%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
+<%= f.hidden_field :category_id, :value => 1 %>
 
+
+<p><%= f.label :noun %>
 <%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
 <p><%= f.label :adjective %>
 <%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
