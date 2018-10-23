@@ -1,0 +1,14 @@
+<%= form_for @madlib do |f| %>
+<p><%= f.label :noun %>
+
+<%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word3_id, @adjectives, :id, :name)  %></p>
+<p><%= f.label :noun %>
+<%= f.collection_select(:word4_id, @nouns, :id, :name)  %></p>
+<p><%= f.label :verb %>
+<%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+<%= f.submit %>
+<% end %>
