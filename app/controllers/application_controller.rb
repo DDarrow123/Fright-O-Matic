@@ -4,4 +4,6 @@ class ApplicationController < ActionController::Base
  @madlib = Madlib.new
   end
 
+  
+
 end
