@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_202944) do
+ActiveRecord::Schema.define(version: 2018_10_23_011920) do
 
   create_table "categories", force: :cascade do |t|
     t.string "theme"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2018_10_22_202944) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "word1_id"
+    t.integer "word2_id"
+    t.integer "word3_id"
+    t.integer "word4_id"
+    t.integer "word5_id"
   end
 
   create_table "pranks", force: :cascade do |t|
@@ -36,9 +41,9 @@ ActiveRecord::Schema.define(version: 2018_10_22_202944) do
     t.string "name"
     t.integer "value"
     t.string "w_type"
-    t.integer "madlib_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
 end
