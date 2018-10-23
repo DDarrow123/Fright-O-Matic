@@ -8,7 +8,8 @@
 <p> "your victim <%= Word.find(@witch.word2_id).name %> while you are overcome with glee.
 The <%= Word.find(@witch.word1_id).name %>, <%= Word.find(@witch.word3_id).name %> state in which you have left your victim should only last a day or two."</p>
 
-
+<h2>Your Total</h2>
+<%= @witch_user_total %>
 
 <h3>The computers form </h3>
 
@@ -21,3 +22,7 @@ The <%= Word.find(@witch.word1_id).name %>, <%= Word.find(@witch.word3_id).name 
 
 <p> "your victim <%= @cadjectives.sample.name %> while you are overcome with glee.
 The <%= @cnouns.sample.name %>, <%= @cadjectives.sample.name %> state in which you have left your victim should only last a day or two."</p>
+
+
+<h2>The Computer's Total</h2>
+<%= @witch_cpu_total %>
