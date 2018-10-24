@@ -1,5 +1,15 @@
 <h1>Dolls Madlibs 👻 </h1>
 
+<h3>Who Won?</h3>
+<% if @doll_user_total > @doll_cpu_total %>
+<%= "Your madlib wins!!" %>
+<% elsif  @doll_cpu_total > @doll_user_total %>
+<%= "The computer's madlib wins!" %>
+<% else %>
+<% @doll_user_total == @doll_cpu_total %>
+<%= "It's a tie!" %>
+<% end %>
+
 <h2>Your Madlib: </h2>
 
 <p>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</p>

@@ -1,3 +1,36 @@
+
+<script>
+
+var startTime = 0;
+var timeleft = 60;
+var currentTime = 0;
+
+function setup() {
+ noCanvas();
+
+ var timer = select('#timer')
+ timer.html(timeleft - currentTime)
+
+
+ var interval = setInterval(timeIt, 1000);
+
+ function timeIt() {
+   currentTime ++;
+   timer.html(timeleft - currentTime);
+
+if (currentTime == timeleft) {
+  clearInterval(interval)
+  alert("You are out of time!!");
+
+    }
+  }
+}
+
+
+
+</script>
+
+
 <%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
 <%= f.hidden_field :category_id, :value => 1 %>
 
@@ -14,3 +47,5 @@
 <%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
 <%= f.submit %>
 <% end %>
+
+<p id="timer">_________</p>

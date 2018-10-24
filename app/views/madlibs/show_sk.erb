@@ -1,4 +1,15 @@
 <h1>Serial Killer Madlibs 🔪 </h1>
+
+<h3>Who Won?</h3>
+<% if @sk_user_total > @sk_cpu_total %>
+<%= "Your madlib wins!!" %>
+<% elsif  @sk_cpu_total > @sk_user_total %>
+<%= "The computer's madlib wins!" %>
+<% else %>
+<% @sk_user_total == @sk_cpu_total %>
+<%= "It's a tie!" %>
+<% end %>
+
 <h2>Your Madlib: </h2>
 <p>To scare the living daylights out of your chosen victim, </p>
 <p>find a gruesome or <%= Word.find(@sk.word1_id).name %> mask or hooded <%= Word.find(@sk.word2_id).name %> </p>

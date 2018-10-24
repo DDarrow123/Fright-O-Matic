@@ -1,5 +1,16 @@
 <h1 class= "animated lightSpeedOut witch-word">Witches</h1>
 
+
+<h3>Who Won?</h3>
+<% if @witch_user_total > @witch_cpu_total %>
+<%= "Your madlib wins!!" %>
+<% elsif  @witch_cpu_total > @witch_user_total %>
+<%= "The computer's madlib wins!" %>
+<% else %>
+<% @witch_user_total == @witch_cpu_total %>
+<%= "It's a tie!" %>
+<% end %>
+
 <h3>YOU</h3>
 
 <p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</p>
