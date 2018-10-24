@@ -1,4 +1,24 @@
-<h1>Welcome to Fright-O-Matic!</h1>
 
-<h3>Click here to pick a category to generate a prank</h3>
-<%= link_to "categories", category_index_path %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<body>
+
+
+<h1>Welcome to Fright-<span class= "animated zoomIn madlib-word">O-Matic!</span></h1>
+
+<h3 class="index-title-font">CLICK BELOW TO CLICK A CATEGORY TO GENERATE A PRANK</h3>
+
+<div class="img-holder">
+  <img src="assets/welcome_photo.jpg" id="pumpkin" alt="smoking pumpkin">
+</div>
+
+<a class="categories"><%= link_to "CATEGORIES", category_index_path, class: 'waves-effect waves-light btn-large red src-link' %></a>
+
+</body>
+
+</html>

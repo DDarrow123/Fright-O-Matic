@@ -1,0 +1,113 @@
+@import 'animate';
+
+.madlib-word {
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+.witch-word {
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+@charset "UTF-8";
+
+// Color
+@import "materialize/components/color-variables";
+@import "materialize/components/color-classes";
+
+// Variables;
+@import "materialize/components/variables";
+
+// Reset
+@import "materialize/components/normalize";
+
+// materialize/components
+@import "materialize/components/global";
+@import "materialize/components/badges";
+@import "materialize/components/icons-material-design";
+@import "materialize/components/grid";
+@import "materialize/components/navbar";
+@import "materialize/components/typography";
+@import "materialize/components/transitions";
+@import "materialize/components/cards";
+@import "materialize/components/toast";
+@import "materialize/components/tabs";
+@import "materialize/components/tooltip";
+@import "materialize/components/buttons";
+@import "materialize/components/dropdown";
+@import "materialize/components/waves";
+@import "materialize/components/modal";
+@import "materialize/components/collapsible";
+@import "materialize/components/chips";
+@import "materialize/components/materialbox";
+// @import "materialize/components/forms/forms";
+@import "materialize/components/table_of_contents";
+@import "materialize/components/sidenav";
+@import "materialize/components/preloader";
+@import "materialize/components/slider";
+@import "materialize/components/carousel";
+@import "materialize/components/tapTarget";
+@import "materialize/components/pulse";
+@import "materialize/components/datepicker";
+@import "materialize/components/timepicker";
+
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+// WELCOME PAGE
+.pumpkin {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.categories {
+  margin-left: 40px;
+}
+
+.btn-floating.btn-large {
+  width: 100px;
+  height: 56px;
+
+}
+
+// .img-holder {position: relative;}
+.src-link {
+    position: absolute;
+    top: 500px; /*your button position*/
+    // right: 10px; /*your button position*/
+}
+
+.btn-large {
+  border: 5px solid #772c09;
+  
+}
+
+.index-title-font {
+  font-size: 15px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

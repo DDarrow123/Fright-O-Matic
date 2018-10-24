@@ -1,4 +1,4 @@
-<h1>Ghosts</h1>
+<h1 class= "animated bounce madlib-word">Ghosts</h1>
 
 <p>To initiate this prank summon a not so friendly spirit.</p>
 
@@ -8,7 +8,7 @@
 <p>The spirit first <%= Word.find(@ghost.word2_id).name %> your victim.
 Your victim <%= Word.find(@ghost.word3_id).name %> and  <%= Word.find(@ghost.word4_id).name %> in a devious fashion while the ghost <%= Word.find(@ghost.word5_id).name %> your victim as the ultimate prank.</p>
 
-<h2>Your Total</h2>
+<h2 class= "animated flash madlib-word">Your Total</h2>
 <%= @ghost_user_total %>
 
 <h3>The Computers Form </h3>
@@ -23,5 +23,5 @@ Your victim <%= Word.find(@ghost.word3_id).name %> and  <%= Word.find(@ghost.wor
 Your victim <%= @cverbs.sample.name %> and  <%= @cverbs.sample.name %> in a devious fashion while the ghost <%= @cverbs.sample.name %> your victim as the ultimate prank.</p>
 
 
-<h2>The Computer's Total</h2>
+<h2 class= "animated flash madlib-word">The Computer's Total</h2>
 <%= @ghost_cpu_total %>
