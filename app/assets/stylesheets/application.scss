@@ -546,6 +546,11 @@ a {
   background-color: #d370ad;
 }
 
+/// MAIN SHOW PAGE STYLING ////
+.show-border {
+  border: 10px solid black;
+}
+
 //// WITCH-SPECIFIC NEW PAGE ////
 
 .witch-background {
@@ -635,7 +640,7 @@ a {
 }
 .g_total {
   color:#eee;
-  font-size: 60px;
+  font-size: 40px;
 }
 .text-pop-up-bottom{
   animation:text-pop-up-bottom .5s cubic-bezier(.25,.46,.45,.94) both

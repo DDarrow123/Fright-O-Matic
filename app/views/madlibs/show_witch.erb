@@ -27,8 +27,8 @@
 
 
 <div class="show-container">
-<div>
-<h3>YOU</h3>
+<div class="show-border">
+<h3 class="text-pop-up-bottom">YOU</h3>
 
 <p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</p>
 
@@ -38,14 +38,14 @@ The<span class="word"> <%= Word.find(@witch.word2_id).name %>, <%= Word.find(@wi
 
 <h4>Your Total</h4>
 <div class="w_total text-pop-up-bottom" >
-<h5><%= @witch_user_total %></h5>
+<%= @witch_user_total %>
 </div>
 </div>
 
 
 
-<div>
-<h3>COMPUTER</h3>
+<div class="show-border">
+<h3 class="text-pop-up-bottom">COMPUTER</h3>
 
 
 <p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow Feathers.</p>
@@ -59,7 +59,7 @@ The <span class="word"> <%= @cadjectives.sample.name %>, <%= @cadjectives.sample
 
 <h4>The Computer's Total</h4>
 <div class="w_total text-pop-up-bottom">
-<h5><%= @witch_cpu_total %></h5>
+<%= @witch_cpu_total %>
 </div>
 </div>
 </div>

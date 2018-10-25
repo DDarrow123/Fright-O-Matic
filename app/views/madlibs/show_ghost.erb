@@ -3,7 +3,7 @@
     <div class= "flyingghost">
   <div class="animated lightSpeedOut ghost">
   <div class="ghosticon">
-    <img src="../assets/ghosticon.png">
+    <img src="../assets/ghost_2.png">
     </div>
 
   </div>
@@ -39,7 +39,7 @@ Your victim <span class="word"><%= Word.find(@ghost.word3_id).name %></span> and
 
 <h3>Your Total</h3>
 <div class="g_total text-pop-up-bottom" >
-<h5><%= @ghost_user_total %></h5>
+<%= @ghost_user_total %>
 </div>
 </div>
 
@@ -56,7 +56,7 @@ Your victim <span class="word"><%= @cverbs.sample.name %></span> and <span class
 
 <h3>The Computer's Total</h3>
 <div class="g_total text-pop-up-bottom">
-<h5><%= @ghost_cpu_total %></h5>
+<%= @ghost_cpu_total %>
 
 </div>
 </div>
