@@ -1,35 +1,66 @@
-<h1 class= "animated bounce madlib-word">Ghosts</h1>
+<head>
+  <img class= "img" src="../assets/heads.jpg" alt="head">
+    <div class= "flyingghost">
+  <div class="animated lightSpeedOut ghost">
+  <div class="ghosticon">
+    <img src="../assets/ghosticon.png">
+    </div>
+
+  </div>
+  </div>
+</head>
+<body class = "g_background">
+
 
 <h3>Who Won?</h3>
 <% if @ghost_user_total > @ghost_cpu_total %>
-<%= "Your madlib wins!!" %>
+<div class="g_winner">
+<%= "Your madlib wins!!" %></div>
 <% elsif  @ghost_cpu_total > @ghost_user_total %>
-<%= "The computer's madlib wins!" %>
+<div class="g_winner">
+<%= "The computer's madlib wins!" %></div>
 <% else %>
 <% @ghost_user_total == @ghost_cpu_total %>
-<%= "It's a tie!" %>
+<div class="g_winner">
+<%= "It's a tie!" %></div>
 <% end %>
 
-<p>To initiate this prank summon a not so friendly spirit.</p>
-
-<p>Get both your victim and your <%= Word.find(@ghost.word1_id).name %> spirit in a non-escapable room.</p>
-
-
-<p>The spirit first <%= Word.find(@ghost.word2_id).name %> your victim.
-Your victim <%= Word.find(@ghost.word3_id).name %> and  <%= Word.find(@ghost.word4_id).name %> in a devious fashion while the ghost <%= Word.find(@ghost.word5_id).name %> your victim as the ultimate prank.</p>
-
-<h2 class= "animated flash madlib-word">Your Total</h2>
-<%= @ghost_user_total %>
-
-<h3>The Computers Form </h3>
+<div class="show-container">
+<div>
+<h3>YOU</h3>
 
 <p>To initiate this prank summon a not so friendly spirit.</p>
 
-<p>Get both your victim and your <%=  @cnouns.sample.name %> spirit in a non-escapable room.</p>
-
-<p>The spirit first <%= @cverbs.sample.name %> your victim.
-Your victim <%= @cverbs.sample.name %> and  <%= @cverbs.sample.name %> in a devious fashion while the ghost <%= @cverbs.sample.name %> your victim as the ultimate prank.</p>
+<p>Get both your victim and your <span class="word"><%= Word.find(@ghost.word1_id).name %></span> spirit in a non-escapable room.</p>
 
 
-<h2 class= "animated flash madlib-word">The Computer's Total</h2>
-<%= @ghost_cpu_total %>
+<p>The spirit first <span class="word"><%= Word.find(@ghost.word2_id).name %></span> your victim.
+Your victim <span class="word"><%= Word.find(@ghost.word3_id).name %></span> and <span class="word"><%= Word.find(@ghost.word4_id).name %></span> in a devious fashion while the ghost <span class="word"><%= Word.find(@ghost.word5_id).name %></span> your victim as the ultimate prank.</p>
+
+<h3>Your Total</h3>
+<div class="g_total text-pop-up-bottom" >
+<h5><%= @ghost_user_total %></h5>
+</div>
+</div>
+
+<div>
+<h3>COMPUTER</h3>
+
+<p>To initiate this prank summon a not so friendly spirit.</p>
+
+<p>Get both your victim and your <span class="word"><%=  @cnouns.sample.name %></span> spirit in a non-escapable room.</p>
+
+<p>The spirit first <span class="word"><%= @cverbs.sample.name %></span> your victim.
+Your victim <span class="word"><%= @cverbs.sample.name %></span> and <span class="word"><%= @cverbs.sample.name %></span> in a devious fashion while the ghost <span class="word"><%= @cverbs.sample.name %></span> your victim as the ultimate prank.</p>
+
+
+<h3>The Computer's Total</h3>
+<div class="g_total text-pop-up-bottom">
+<h5><%= @ghost_cpu_total %></h5>
+
+</div>
+</div>
+</div>
+
+
+</body>

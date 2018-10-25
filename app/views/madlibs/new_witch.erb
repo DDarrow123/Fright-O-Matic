@@ -1,7 +1,7 @@
-<body>
+<body class="witch-background">
 <h3 class="prank-title animated pulse madlib-word">WITCHES: YOUR PRANK SELECTS AWAIT</h3>
 
-<div class="row">
+<div class="row flicker-in-1">
    <div class="col s12 m5">
      <div class="card-panel teal">
        <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB & SEE IF YOU'RE THE WINNER!
@@ -31,7 +31,7 @@
 <p class="select-box"><%= f.label :verb, class: 'prank-title' %>
 <%= f.collection_select(:word5_id, @verbs, :id, :name)%></p>
 
-<p class="select-box prank-submit">
+<p class="prank-submit">
 <%= f.submit %>
 <% end %>
 <p>
@@ -43,7 +43,7 @@
 
 </div>
 
-<div class="row">
+<div class="row flicker-in-1">
    <div class="col s12 m5">
      <div class="card-panel teal">
        <span class="white-text">HURRY BEFORE THE CLOCK RUNS OUT. IF IT RUNS OUT, YOU MUST CLICK 'CREATE MADLIB'
