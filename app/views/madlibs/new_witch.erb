@@ -1,41 +1,11 @@
 
-<script>
-
-var startTime = 0;
-var timeleft = 60;
-var currentTime = 0;
-
-function setup() {
- noCanvas();
-
- var timer = select('#timer')
- timer.html(timeleft - currentTime)
-
-
- var interval = setInterval(timeIt, 1000);
-
- function timeIt() {
-   currentTime ++;
-   timer.html(timeleft - currentTime);
-
-if (currentTime == timeleft) {
-  clearInterval(interval)
-  alert("You are out of time!!");
-
-    }
-  }
-}
-
-
-
-</script>
-
+<h3>YOUR PRANK SELECTS</h3>
+<h5>IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN.<br> CLICK CREATE MADLIB TO TRY YOU LUCK!</h5>
 
 <%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
 <%= f.hidden_field :category_id, :value => 1 %>
 
-
-<p><%= f.label :noun %>
+  <p><%= f.label :noun %>
 <%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
 <p><%= f.label :adjective %>
 <%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
@@ -48,4 +18,33 @@ if (currentTime == timeleft) {
 <%= f.submit %>
 <% end %>
 
+<div>
+<h6 class="select-title">PICK YOUR SELECTIONS BEFORE THE CLOCK RUNS OUT</h6>
+
 <p id="timer">_________</p>
+</div>
+
+<script>
+
+var timeleft = 30;
+var currentTime = 0;
+
+
+ var timer = $('#timer')
+ timer.html(timeleft - currentTime)
+
+ var interval = setInterval(timeIt, 1000);
+
+ function timeIt() {
+
+   currentTime ++;
+   timer.html(timeleft - currentTime);
+
+if (currentTime == timeleft) {
+  clearInterval(interval)
+  alert("You are out of time!!");
+
+    }
+  }
+
+</script>
