@@ -4,7 +4,7 @@
 <div class="row">
    <div class="col s12 m5">
      <div class="card-panel teal">
-       <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB TO TRY YOU LUCK!
+       <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB & SEE IF YOU'RE THE WINNER!
        </span>
      </div>
    </div>
@@ -12,7 +12,7 @@
 
 <div class="flex">
 
-<div class="container">
+<div class="container shadow-pop-br">
 <%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
 <%= f.hidden_field :category_id, :value => 1 %>
 
@@ -37,7 +37,7 @@
 <p>
 </div>
 
-<div class="container">
+<div class="container text-pop-up-bottom">
 <p id="timer">_________</p>
 </div>
 
@@ -55,7 +55,7 @@
 
 <script>
 
-var timeleft = 60;
+var timeleft = 30;
 var currentTime = 0;
 
 

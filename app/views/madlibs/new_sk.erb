@@ -1,15 +1,77 @@
-<h3>Pick random attributes to create your madlib... Choose your words carefully, if you want to beat the computer you will have to find the most complex words.. they have the highest value!! </h3>
+<body class="sk-background">
+
+<h3 class="ghost-prank-title animated pulse madlib-word">SERIAL KILLERS: YOUR PRANK AWAITS</h3>
+
+<div class="row">
+   <div class="col s12 m5">
+     <div class="card-panel teal">
+       <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB & SEE IF YOU'RE THE WINNER!
+       </span>
+     </div>
+   </div>
+ </div>
+
+
+<div class="flex">
+<div class="container shadow-pop-br">
 <%= form_for @sk, :url => { :controller => "madlibs", :action => "create_sk" } do |f| %>
 <%= f.hidden_field :category_id, :value => 3 %>
-<p><%= f.label :adjective %>
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
 <%= f.collection_select(:word1_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :adjective %>
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
 <%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :noun %>
+<p class="select-box"><%= f.label :noun, class: 'prank-title' %>
 <%= f.collection_select(:word3_id, @nouns, :id, :name)  %></p>
-<p><%= f.label :adjective %>
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
 <%= f.collection_select(:word4_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :verb %>
+<p class="select-box"><%= f.label :verb, class: 'prank-title' %>
 <%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+
+<p class="select-box prank-submit">
 <%= f.submit %>
 <% end %>
+</p>
+</div>
+
+<div class="container text-pop-up-bottom">
+<p id="timer">_________</p>
+</div>
+
+</div>
+
+<div class="row">
+   <div class="col s12 m5">
+     <div class="card-panel teal">
+       <span class="white-text">HURRY BEFORE THE CLOCK RUNS OUT. IF IT RUNS OUT, YOU MUST CLICK 'CREATE MADLIB'
+       </span>
+     </div>
+   </div>
+ </div>
+
+
+<script>
+
+var timeleft = 30;
+var currentTime = 0;
+
+
+ var timer = $('#timer')
+ timer.html(timeleft - currentTime)
+
+ var interval = setInterval(timeIt, 1000);
+
+ function timeIt() {
+
+   currentTime ++;
+   timer.html(timeleft - currentTime);
+
+if (currentTime == timeleft) {
+  clearInterval(interval)
+  alert("You are out of time!!");
+
+    }
+  }
+
+</script>
+
+</body>
