@@ -1,33 +1,47 @@
-
-<h3 class="prank-title animated pulse madlib-word">YOUR PRANK SELECTS</h3>
+<body>
+<h3 class="prank-title animated pulse madlib-word">WITCHES: YOUR PRANK SELECTS AWAIT</h3>
 
 <div class="row">
    <div class="col s12 m5">
      <div class="card-panel teal">
-       <span class="white-text">IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB TO TRY YOU LUCK!
+       <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB TO TRY YOU LUCK!
        </span>
      </div>
    </div>
  </div>
 
-<!-- <h5>IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN.<br> CLICK CREATE MADLIB TO TRY YOU LUCK!</h5> -->
+<div class="flex">
 
+<div class="container">
 <%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
 <%= f.hidden_field :category_id, :value => 1 %>
 
-  <p><%= f.label :noun %>
+  <p class="select-box"><%= f.label :noun, class: 'prank-title' %>
 <%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
-<p><%= f.label :adjective %>
-<%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :adjective %>
-<%= f.collection_select(:word3_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :noun %>
-<%= f.collection_select(:word4_id, @nouns, :id, :name)  %></p>
-<p><%= f.label :verb %>
-<%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
+<%= f.collection_select(:word2_id, @adjectives, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
+<%= f.collection_select(:word3_id, @adjectives, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :noun, class: 'prank-title' %>
+<%= f.collection_select(:word4_id, @nouns, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :verb, class: 'prank-title' %>
+<%= f.collection_select(:word5_id, @verbs, :id, :name)%></p>
+
+<p class="select-box prank-submit">
 <%= f.submit %>
 <% end %>
+<p>
+</div>
 
+<div class="container">
+<p id="timer">_________</p>
+</div>
+
+</div>
 
 <div class="row">
    <div class="col s12 m5">
@@ -38,13 +52,10 @@
    </div>
  </div>
 
-<div>
-<p id="timer">_________</p>
-</div>
 
 <script>
 
-var timeleft = 30;
+var timeleft = 60;
 var currentTime = 0;
 
 
@@ -66,3 +77,5 @@ if (currentTime == timeleft) {
   }
 
 </script>
+
+</body>

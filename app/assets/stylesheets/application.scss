@@ -63,7 +63,7 @@
 // WELCOME / INDEX PAGE //
 
 body {
-  margin: 20px;
+  margin: 40px;
 }
 
 .fright-title {
@@ -74,13 +74,13 @@ body {
 
 
 .pumpkin {
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
 
   /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .btn-floating.btn-large {
@@ -92,7 +92,7 @@ body {
 .src-link {
     position: absolute;
     top: 700px; /*your button position*/
-    left: 900px;
+    left: 700px;
     // right: 10px; /*your button position*/
 }
 
@@ -136,26 +136,21 @@ a {
   margin: 60px 0 60px 0;
 }
 
-// .row {
-//   position: absolute;
-//   top: 200px;
-// }
 
-// .index-title-font {
-//   position: absolute;
-//   top: 300px;
-//   color: white;
-//   font-size: 20px;
-//   margin-left: 20px;
-//   font-weight: 600;
-//
-// }
-
-//WITCH NEW PAGE//
+////NEW PAGES STYLING (WITCH, GHOST, DOLL, SK) ////
 #timer {
   font-size: 80px;
   color: white;
   text-align: center;
+}
+.container {
+  width: 30%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .select-title {
@@ -171,7 +166,31 @@ a {
   margin-left: 40px;
 }
 
+.select-box {
+  border: 10px solid black;
+}
 
+.prank-submit {
+  color: white;
+  margin-left: 110px;
+  margin-right: 115px;
+}
+
+//// GHOST-SPECIFIC NEW PAGE ////
+
+.ghost-background {
+  background-color: #7f7876;
+}
+
+.ghost-prank-title {
+  color: black;
+}
+
+//// DOLL-SPECIFIC NEW PAGE ////
+
+.doll-background {
+  background-color: #e5baae;
+}
 
  // * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  // * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
