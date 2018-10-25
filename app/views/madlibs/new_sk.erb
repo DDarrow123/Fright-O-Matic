@@ -1,0 +1,15 @@
+<h3>Pick random attributes to create your madlib... Choose your words carefully, if you want to beat the computer you will have to find the most complex words.. they have the highest value!! </h3>
+<%= form_for @sk, :url => { :controller => "madlibs", :action => "create_sk" } do |f| %>
+<%= f.hidden_field :category_id, :value => 3 %>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word1_id, @adjectives, :id, :name)  %></p>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
+<p><%= f.label :noun %>
+<%= f.collection_select(:word3_id, @nouns, :id, :name)  %></p>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word4_id, @adjectives, :id, :name)  %></p>
+<p><%= f.label :verb %>
+<%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+<%= f.submit %>
+<% end %>

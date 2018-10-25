@@ -1,4 +1,42 @@
-<h1>Welcome to Fright-O-Matic!</h1>
 
-<h3>Click here to pick a category to generate a prank</h3>
-<%= link_to "categories", category_index_path %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<body>
+
+
+<h1 class="fright-title">WELCOME TO FRIGHT-<span class= "animated zoomIn madlib-word">O-MATIC!</span></h1>
+
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card black darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">PLAY THE GAME IF YOU DARE...</span>
+          <p class="animated flash slow category-button">CLICK THE 'CATEGORIES' BUTTON BELOW TO BEGIN
+          </p>
+        </div>
+        <div class="card-action">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- <h3 class="index-title-font animated">CLICK BELOW FOR A CATEGORY</h3> -->
+
+<div class="img-holder">
+  <img src="assets/welcome_photo.jpg" id="pumpkin" alt="smoking pumpkin">
+</div>
+
+<div>
+<a class="categories"><%= link_to "CATEGORIES", category_index_path, class: 'waves-effect waves-light btn-large red src-link' %></a>
+</div>
+
+</body>
+
+</html>

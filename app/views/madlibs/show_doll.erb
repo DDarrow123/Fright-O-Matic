@@ -1,0 +1,26 @@
+<h1>Dolls Madlibs 👻 </h1>
+
+<h3>Who Won?</h3>
+<% if @doll_user_total > @doll_cpu_total %>
+<%= "Your madlib wins!!" %>
+<% elsif  @doll_cpu_total > @doll_user_total %>
+<%= "The computer's madlib wins!" %>
+<% else %>
+<% @doll_user_total == @doll_cpu_total %>
+<%= "It's a tie!" %>
+<% end %>
+
+<h2>Your Madlib: </h2>
+
+<p>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</p>
+<p>Place your <%= Word.find(@doll.word1_id).name %> doll of choice in a locker, desk, or other <%= Word.find(@doll.word2_id).name %> area of your chosen <%= Word.find(@doll.word3_id).name %> place.</p>
+<p>Wait for this person to discover the doll which <%= Word.find(@doll.word4_id).name %>  while you watch, smile spreading across your <%= Word.find(@doll.word5_id).name %> face.</p>
+
+<h3>Your Total</h3>
+<%= @doll_user_total %>
+<h2>The Computer Madlib: </h2>
+<p>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</p>
+<p>Place your <%= @cadjectives.sample.name %> doll of choice in a locker, desk, or other <%= @cadjectives.sample.name %> area of your chosen <%= @cnouns.sample.name %> place.</p>
+<p>Wait for this person to discover the doll and <%= @cverbs.sample.name %>  while you watch, smile spreading across your <%= @cnouns.sample.name %> face.</p>
+<h3>Your Total</h3>
+<%= @doll_cpu_total %>

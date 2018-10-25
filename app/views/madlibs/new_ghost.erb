@@ -1,0 +1,17 @@
+<%= form_for @ghost, :url => { :controller => "madlibs", :action => "create_ghost" } do |f| %>
+<%= f.hidden_field :category_id, :value => 2 %>
+
+
+<p><%= f.label :noun %>
+<%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
+<p><%= f.label :verb %>
+<%= f.collection_select(:word2_id, @verbs, :id, :name)  %></p>
+<p><%= f.label :verb %>
+<%= f.collection_select(:word3_id, @verbs, :id, :name)  %></p>
+<p><%= f.label :adjective %>
+<%= f.collection_select(:word4_id, @verbs, :id, :name)  %></p>
+<p><%= f.label :verb %>
+<%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+
+<%= f.submit %>
+<% end %>
