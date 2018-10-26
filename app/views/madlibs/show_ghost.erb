@@ -9,7 +9,7 @@
   </div>
   </div>
 </head>
-<body class = "g_background">
+<body class = "g_background page-gutter">
 
 
 <h3>Who Won?</h3>
@@ -25,11 +25,11 @@
 <%= "It's a tie!" %></div>
 <% end %>
 
-<div class="show-container">
-<div>
-<h3>YOU</h3>
+<div class="show-container form-margin">
+<div class="show-border">
+<h3 class="text-pop-up-top">YOU</h3>
 
-<p>To initiate this prank summon a not so friendly spirit.</p>
+<h5>To initiate this prank summon a not so friendly spirit.</h5>
 
 <p>Get both your victim and your <span class="word"><%= Word.find(@ghost.word1_id).name %></span> spirit in a non-escapable room.</p>
 
@@ -37,16 +37,17 @@
 <p>The spirit first <span class="word"><%= Word.find(@ghost.word2_id).name %></span> your victim.
 Your victim <span class="word"><%= Word.find(@ghost.word3_id).name %></span> and <span class="word"><%= Word.find(@ghost.word4_id).name %></span> in a devious fashion while the ghost <span class="word"><%= Word.find(@ghost.word5_id).name %></span> your victim as the ultimate prank.</p>
 
-<h3>Your Total</h3>
+
 <div class="g_total text-pop-up-bottom" >
 <%= @ghost_user_total %>
 </div>
 </div>
 
-<div>
-<h3>COMPUTER</h3>
 
-<p>To initiate this prank summon a not so friendly spirit.</p>
+<div class="show-border">
+<h3 class="text-pop-up-top">COMPUTER</h3>
+
+<h5>To initiate this prank summon a not so friendly spirit.</h5>
 
 <p>Get both your victim and your <span class="word"><%=  @cnouns.sample.name %></span> spirit in a non-escapable room.</p>
 
@@ -54,13 +55,16 @@ Your victim <span class="word"><%= Word.find(@ghost.word3_id).name %></span> and
 Your victim <span class="word"><%= @cverbs.sample.name %></span> and <span class="word"><%= @cverbs.sample.name %></span> in a devious fashion while the ghost <span class="word"><%= @cverbs.sample.name %></span> your victim as the ultimate prank.</p>
 
 
-<h3>The Computer's Total</h3>
+
 <div class="g_total text-pop-up-bottom">
 <%= @ghost_cpu_total %>
 
-</div>
-</div>
+ </div>
+ </div>
 </div>
 
-
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
 </body>

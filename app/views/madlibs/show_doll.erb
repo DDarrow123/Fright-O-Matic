@@ -9,7 +9,7 @@
   </div>
   </div>
 </head>
-<body class = "d_background">
+<body class = "d_background page-gutter">
 
 
 <h3>Who Won?</h3>
@@ -25,33 +25,35 @@
 <%= "It's a tie!" %></div>
 <% end %>
 
-<div class="show-container">
-<div>
-<h2>YOU</h2>
+<div class="show-container form-margin">
+<div class="show-border">
+<h3 class="text-pop-up-top">YOU</h3>
 
-<p>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</p>
+<h5>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</h5>
 <p>Place your <span class="word"><%= Word.find(@doll.word1_id).name %></span> doll of choice in a locker, desk, or other <span class="word"><%= Word.find(@doll.word2_id).name %></span> area of your chosen<span class="word"> <%= Word.find(@doll.word3_id).name %></span> place.</p>
 <p>Wait for this person to discover the doll which <span class="word"><%= Word.find(@doll.word4_id).name %></span> while you watch, smile spreading across your <span class="word"><%= Word.find(@doll.word5_id).name %></span> face.</p>
 
-<h3>Your Total</h3>
-<div class="d_total text-pop-up-bottom" >
+
+<div class="d_total text-pop-up-right" >
 <%= @doll_user_total %>
 </div>
 </div>
 
-<div>
-<h2>COMPUTER</h2>
+<div class="show-border">
+<h3 class="text-pop-up-top">COMPUTER</h3>
 
-<p>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</p>
+<h5>To scare a friend or foe, unleash this prank using a frightening or average-looking doll:</h5>
 <p>Place your <span class="word"><%= @cadjectives.sample.name %></span> doll of choice in a locker, desk, or other <span class="word"><%= @cadjectives.sample.name %></span> area of your chosen <span class="word"><%= @cnouns.sample.name %></span> place.</p>
 <p>Wait for this person to discover the doll which <span class="word"><%= @cverbs.sample.name %></span>  while you watch, smile spreading across your <span class="word"><%= @cnouns.sample.name %> </span> face.</p>
-<h3>The Computer's Total</h3>
-<div class="d_total text-pop-up-bottom">
+
+<div class="d_total text-pop-up-right">
 <%= @doll_cpu_total %>
 
 </div>
 </div>
 </div>
-
-
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
 </body>

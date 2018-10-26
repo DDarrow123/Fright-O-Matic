@@ -9,7 +9,7 @@
   </div>
   </div>
 </head>
-<body class = "sk_background">
+<body class = "sk_background page-gutter">
 
 <h3>Who Won?</h3>
 <% if @sk_user_total > @sk_cpu_total %>
@@ -24,11 +24,12 @@
 <%= "It's a tie!" %></div>
 <% end %>
 
-<div class="show-container">
-<div>
+<div class="show-container form-margin">
+<div class="show-border">
 
-<h2>YOU</h2>
-<p>To scare the living daylights out of your chosen victim, </p>
+<h2 class="text-pop-up-top">YOU</h2>
+
+<h5>To scare the living daylights out of your chosen victim, </h5>
 <p>find a gruesome or <span class="word"><%= Word.find(@sk.word1_id).name %></span> mask or hooded <span class="word"><%= Word.find(@sk.word2_id).name %> </span></p>
 <p> to wear along with a fake weapon of choice.</p>
 <p>Try a <span class="word"><%= Word.find(@sk.word3_id).name %></span> chainsaw, knife, or weapon of choice.</p>
@@ -36,16 +37,16 @@
 <p>Enjoy the feeling of him/her being thoroughly frightened</p>
 <p> at your presence and maybe even <span class="word"><%= Word.find(@sk.word5_id).name %></span> away at full speed.</p>
 
-<h4>Your Total</h4>
-<div class="sk_total text-pop-up-bottom" >
+
+<div class="sk_total text-pop-up-right" >
 <%= @sk_user_total %>
 </div>
 </div>
 
-<div>
-<h2>COMPUTER</h2>
+<div class="show-border">
+<h3 class="text-pop-up-top">COMPUTER</h3>
 
-<p>To scare the living daylights out of your chosen victim, </p>
+<h5>To scare the living daylights out of your chosen victim, </h5>
 <p>find a gruesome or <span class="word"><%= @cadjectives.sample.name %></span> mask or hooded </p>
 <p><span class="word"><%= @cnouns.sample.name %></span> to wear along with a fake weapon of choice.</p>
 <p>Try a <span class="word"><%= @cnouns.sample.name %></span> chainsaw, knife, or weapon of choice.</p>
@@ -53,12 +54,16 @@
 <p>Enjoy the feeling of him/her being thoroughly frightened</p>
 <p> at your presence and maybe even <span class="word"><%=  @cverbs.sample.name %></span> away at full speed.</p>
 
-<h4>The Computer's Total</h4>
-<div class="sk_total text-pop-up-bottom">
+
+<div class="sk_total text-pop-up-right">
 <%= @sk_cpu_total %>
 </div>
 </div>
 </div>
 
 
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
 </body>

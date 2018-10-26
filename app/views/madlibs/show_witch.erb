@@ -1,15 +1,15 @@
 <head>
   <img class= "img" src="../assets/heads.jpg" alt="head">
     <div class= "flyingwitch">
-  <div class="animated lightSpeedOut witch-word">
-  <div class="witch_icon">
+  <div>
+  <div class="witch_icon animated lightSpeedOut">
     <img src="../assets/flywitch.png">
     </div>
 
   </div>
   </div>
 </head>
-<body class = "w_background">
+<body class = "w_background page-gutter">
 
 
 <h3>Who Won?</h3>
@@ -26,17 +26,17 @@
 <% end %>
 
 
-<div class="show-container">
+<div class="show-container form-margin">
 <div class="show-border">
-<h3 class="text-pop-up-bottom">YOU</h3>
+<h3 class="text-pop-up-top">YOU</h3>
 
-<p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</p>
+<h5>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</h5>
 
 <p>Stir to a boil. Pour the finished potion on your victim. The prankee <span class="word"> <%= Word.find(@witch.word5_id).name %></span> as your potion changes this person into a
 <span class="word"> <%= Word.find(@witch.word4_id).name %></span>  creature, your victim <span class="word"><%= Word.find(@witch.word2_id).name %></span> while you are overcome with glee.</p>
 The<span class="word"> <%= Word.find(@witch.word2_id).name %>, <%= Word.find(@witch.word3_id).name %></span> state in which you have left your victim should only last a day or two.</p>
 
-<h4>Your Total</h4>
+<!-- <h4>Your Total</h4> -->
 <div class="w_total text-pop-up-bottom" >
 <%= @witch_user_total %>
 </div>
@@ -45,24 +45,25 @@ The<span class="word"> <%= Word.find(@witch.word2_id).name %>, <%= Word.find(@wi
 
 
 <div class="show-border">
-<h3 class="text-pop-up-bottom">COMPUTER</h3>
+<h3 class="text-pop-up-top">COMPUTER</h3>
 
 
-<p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow Feathers.</p>
+<h5>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow Feathers.</h5>
 
-<p>Stir to a boil. Pour the finished potion on your victim. The prankee <span class="word"><%= @cverbs.sample.name %></span> as your potion changes this person into a
-  <span class="word"><%= @cnouns.sample.name %> </span> creature,
-
-your victim <span class="word"> <%= @cadjectives.sample.name %></span> while you are overcome with glee.</p>
+<p>Stir to a boil. Pour the finished potion on your victim. The prankee <span class="word"><%=
+@cverbs.sample.name %></span> as your potion changes this person into a <span class="word"><%= @cnouns.sample.name %> </span> creature, your victim <span class="word"> <%= @cadjectives.sample.name %></span> while you are overcome with glee.</p>
 The <span class="word"> <%= @cadjectives.sample.name %>, <%= @cadjectives.sample.name %> </span> state in which you have left your victim should only last a day or two.</p>
 
 
-<h4>The Computer's Total</h4>
+<!-- <h4>The Computer's Total</h4> -->
 <div class="w_total text-pop-up-bottom">
 <%= @witch_cpu_total %>
 </div>
 </div>
 </div>
 
-
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
 </body>

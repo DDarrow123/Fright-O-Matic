@@ -32,7 +32,7 @@
 <%= f.collection_select(:word5_id, @nouns, :id, :name)%></p>
 
 <p class="select-box prank-submit">
-<%= f.submit %>
+<%= f.submit, onclick: '("CreateMadlib");' %>
 <% end %>
 </p>
 </div>
@@ -70,6 +70,10 @@ var currentTime = 0;
 if (currentTime == timeleft) {
   clearInterval(interval)
   alert("You are out of time!!");
+  window.onload = function(){
+    var button = document.getElementById('clickCreateMadlib');
+    button.form.submit();
+     }
 
     }
   }
