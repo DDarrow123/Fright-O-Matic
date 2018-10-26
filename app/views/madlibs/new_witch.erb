@@ -31,7 +31,7 @@
 <p class="select-box"><%= f.label :verb, class: 'prank-title' %>
 <%= f.collection_select(:word5_id, @verbs, :id, :name)%></p>
 
-<p class="prank-submit">
+<p class="submit-box prank-submit">
 <%= f.submit %>
 <% end %>
 <p>
@@ -72,6 +72,9 @@ var currentTime = 0;
 if (currentTime == timeleft) {
   clearInterval(interval)
   alert("You are out of time!!");
+  let collection = document.getElementsByClassName('select-box')
+  let array = Array.prototype.slice.call(collection)
+  array.forEach((box)=>box.style.visibility='hidden')
 
     }
   }
