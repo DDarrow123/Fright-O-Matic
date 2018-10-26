@@ -1,28 +1,57 @@
+<body class="witch-background">
+<h3 class="prank-title animated pulse madlib-word">WITCHES: YOUR PRANK SELECTS AWAIT</h3>
 
-<h3>YOUR PRANK SELECTS</h3>
-<h5>IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN.<br> CLICK CREATE MADLIB TO TRY YOU LUCK!</h5>
+<div class="row flicker-in-1">
+   <div class="col s12 m5">
+     <div class="card-panel teal">
+       <span class="white-text">SELECT WORDS FROM EACH CATEGORY BELOW. IF YOUR SELECTIONS RANK HIGHER THAN THE COMPUTER'S SELECTIONS, YOU WIN. MAKE YOUR SELECTIONS -> CLICK CREATE MADLIB & SEE IF YOU'RE THE WINNER!
+       </span>
+     </div>
+   </div>
+ </div>
 
+<div class="flex">
+
+<div class="container shadow-pop-br">
 <%= form_for @witch, :url => { :controller => "madlibs", :action => "create_witch" } do |f| %>
 <%= f.hidden_field :category_id, :value => 1 %>
 
-  <p><%= f.label :noun %>
+  <p class="select-box"><%= f.label :noun, class: 'prank-title' %>
 <%= f.collection_select(:word1_id, @nouns, :id, :name)  %></p>
-<p><%= f.label :adjective %>
-<%= f.collection_select(:word2_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :adjective %>
-<%= f.collection_select(:word3_id, @adjectives, :id, :name)  %></p>
-<p><%= f.label :noun %>
-<%= f.collection_select(:word4_id, @nouns, :id, :name)  %></p>
-<p><%= f.label :verb %>
-<%= f.collection_select(:word5_id, @verbs, :id, :name)  %></p>
+
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
+<%= f.collection_select(:word2_id, @adjectives, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :adjective, class: 'prank-title' %>
+<%= f.collection_select(:word3_id, @adjectives, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :noun, class: 'prank-title' %>
+<%= f.collection_select(:word4_id, @nouns, :id, :name)%></p>
+
+<p class="select-box"><%= f.label :verb, class: 'prank-title' %>
+<%= f.collection_select(:word5_id, @verbs, :id, :name)%></p>
+
+<p class="prank-submit">
 <%= f.submit %>
 <% end %>
+<p>
+</div>
 
-<div>
-<h6 class="select-title">PICK YOUR SELECTIONS BEFORE THE CLOCK RUNS OUT</h6>
-
+<div class="container text-pop-up-bottom">
 <p id="timer">_________</p>
 </div>
+
+</div>
+
+<div class="row flicker-in-1">
+   <div class="col s12 m5">
+     <div class="card-panel teal">
+       <span class="white-text">HURRY BEFORE THE CLOCK RUNS OUT. IF IT RUNS OUT, YOU MUST CLICK 'CREATE MADLIB'
+       </span>
+     </div>
+   </div>
+ </div>
+
 
 <script>
 
@@ -48,3 +77,5 @@ if (currentTime == timeleft) {
   }
 
 </script>
+
+</body>

@@ -1,35 +1,69 @@
-<h1>Serial Killer Madlibs 🔪 </h1>
+<head>
+  <img class= "img" src="../assets/heads.jpg" alt="head">
+    <div class= "flyingknife">
+  <div class="animated lightSpeedOut">
+  <div class="witch_icon">
+    <img src="../assets/flyingknife.png">
+    </div>
+
+  </div>
+  </div>
+</head>
+<body class = "sk_background page-gutter">
 
 <h3>Who Won?</h3>
 <% if @sk_user_total > @sk_cpu_total %>
-<%= "Your madlib wins!!" %>
+<div class="sk_winner">
+<%= "Your madlib wins!!" %></div>
 <% elsif  @sk_cpu_total > @sk_user_total %>
-<%= "The computer's madlib wins!" %>
+<div class="sk_winner">
+<%= "The computer's madlib wins!" %></div>
 <% else %>
 <% @sk_user_total == @sk_cpu_total %>
-<%= "It's a tie!" %>
+<div class="sk_winner">
+<%= "It's a tie!" %></div>
 <% end %>
 
-<h2>Your Madlib: </h2>
-<p>To scare the living daylights out of your chosen victim, </p>
-<p>find a gruesome or <%= Word.find(@sk.word1_id).name %> mask or hooded <%= Word.find(@sk.word2_id).name %> </p>
+<div class="show-container form-margin">
+<div class="show-border">
+
+<h2 class="text-pop-up-top">YOU</h2>
+
+<h5>To scare the living daylights out of your chosen victim, </h5>
+<p>find a gruesome or <span class="word"><%= Word.find(@sk.word1_id).name %></span> mask or hooded <span class="word"><%= Word.find(@sk.word2_id).name %> </span></p>
 <p> to wear along with a fake weapon of choice.</p>
-<p>Try a <%= Word.find(@sk.word3_id).name %> chainsaw, knife, or weapon of choice.</p>
-<p>You jump out as your <%= Word.find(@sk.word4_id).name %> victim approaches.</p>
-<p>Enjoy the feeling of him/her being thoroughly frightened at your presence</p>
-<p>and maybe even <%= Word.find(@sk.word5_id).name %>  away at full speed."</p>
-<h3>Your Total</h3>
+<p>Try a <span class="word"><%= Word.find(@sk.word3_id).name %></span> chainsaw, knife, or weapon of choice.</p>
+<p>You jump out as your <span class="word"><%= Word.find(@sk.word4_id).name %></span> victim approaches.</p>
+<p>Enjoy the feeling of him/her being thoroughly frightened</p>
+<p> at your presence and maybe even <span class="word"><%= Word.find(@sk.word5_id).name %></span> away at full speed.</p>
+
+
+<div class="sk_total text-pop-up-right" >
 <%= @sk_user_total %>
+</div>
+</div>
 
-<h2>The computer's madlib: </h2>
-<h2>Your Madlib: </h2>
+<div class="show-border">
+<h3 class="text-pop-up-top">COMPUTER</h3>
 
-<p>To scare the living daylights out of your chosen victim, </p>
-<p>Find a gruesome or <%=  @cadjectives.sample.name %> mask or hooded <%=  @cadjectives.sample.name %> </p>
-<p> to wear along with a fake weapon of choice.</p>
-<p>Try a <%=  @cnouns.sample.name %> chainsaw, knife, or weapon of choice.</p>
-<p>You jump out as your <%=  @cadjectives.sample.name %> victim approaches.</p>
-<p>Enjoy the feeling of him/her being thoroughly frightened at your presence</p>
-<p>and maybe even <%=  @cverbs.sample.name %> away at full speed."</p>
-<h3>The Computer's Total</h3>
+<h5>To scare the living daylights out of your chosen victim, </h5>
+<p>find a gruesome or <span class="word"><%= @cadjectives.sample.name %></span> mask or hooded </p>
+<p><span class="word"><%= @cnouns.sample.name %></span> to wear along with a fake weapon of choice.</p>
+<p>Try a <span class="word"><%= @cnouns.sample.name %></span> chainsaw, knife, or weapon of choice.</p>
+<p>You jump out as your <span class="word"><%= @cadjectives.sample.name %></span> victim approaches.</p>
+<p>Enjoy the feeling of him/her being thoroughly frightened</p>
+<p> at your presence and maybe even <span class="word"><%=  @cverbs.sample.name %></span> away at full speed.</p>
+
+
+<div class="sk_total text-pop-up-right">
 <%= @sk_cpu_total %>
+</div>
+</div>
+</div>
+
+
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
+</body>

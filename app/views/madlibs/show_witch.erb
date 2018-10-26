@@ -1,40 +1,69 @@
-<h1 class= "animated lightSpeedOut witch-word">Witches</h1>
+<head>
+  <img class= "img" src="../assets/heads.jpg" alt="head">
+    <div class= "flyingwitch">
+  <div>
+  <div class="witch_icon animated lightSpeedOut">
+    <img src="../assets/flywitch.png">
+    </div>
+
+  </div>
+  </div>
+</head>
+<body class = "w_background page-gutter">
 
 
 <h3>Who Won?</h3>
 <% if @witch_user_total > @witch_cpu_total %>
-<%= "Your madlib wins!!" %>
+<div class="winner">
+<strong><%= "Your madlib wins!!" %></strong></div>
 <% elsif  @witch_cpu_total > @witch_user_total %>
-<%= "The computer's madlib wins!" %>
+<div class="winner">
+<strong><%= "The computer's madlib wins!" %></strong></div>
 <% else %>
 <% @witch_user_total == @witch_cpu_total %>
-<%= "It's a tie!" %>
+<div class="winner">
+<strong><%= "It's a tie!" %></strong></div>
 <% end %>
 
-<h3>YOU</h3>
 
-<p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</p>
+<div class="show-container form-margin">
+<div class="show-border">
+<h3 class="text-pop-up-top">YOU</h3>
 
-<p>Stir to a boil. Pour the finished potion on your victim. The prankee <%= Word.find(@witch.word5_id).name %> as your potion changes this person into a
-  <%= Word.find(@witch.word4_id).name %> creature,</p>
+<h5>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow feathers.</h5>
 
-<p> your victim <%= Word.find(@witch.word2_id).name %> while you are overcome with glee.
-The <%= Word.find(@witch.word2_id).name %>, <%= Word.find(@witch.word3_id).name %> state in which you have left your victim should only last a day or two.</p>
+<p>Stir to a boil. Pour the finished potion on your victim. The prankee <span class="word"> <%= Word.find(@witch.word5_id).name %></span> as your potion changes this person into a
+<span class="word"> <%= Word.find(@witch.word4_id).name %></span>  creature, your victim <span class="word"><%= Word.find(@witch.word2_id).name %></span> while you are overcome with glee.</p>
+The<span class="word"> <%= Word.find(@witch.word2_id).name %>, <%= Word.find(@witch.word3_id).name %></span> state in which you have left your victim should only last a day or two.</p>
 
-<h3>Your Total</h3>
+<!-- <h4>Your Total</h4> -->
+<div class="w_total text-pop-up-bottom" >
 <%= @witch_user_total %>
-
-<h3>COMPUTER</h3>
-
-
-<p>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow Feathers.</p>
-
-<p>Stir to a boil. Pour the finished potion on your victim. The prankee <%= @cverbs.sample.name %> as your potion changes this person into a
-  <%= @cnouns.sample.name %> creature,</p>
-
-<p>your victim <%= @cadjectives.sample.name %> while you are overcome with glee.
-The <%= @cadjectives.sample.name %>, <%= @cadjectives.sample.name %> state in which you have left your victim should only last a day or two.</p>
+</div>
+</div>
 
 
-<h3>The Computer's Total</h3>
+
+<div class="show-border">
+<h3 class="text-pop-up-top">COMPUTER</h3>
+
+
+<h5>To initiate this prank accummulate ingredients for your potion: Eye of Newt, Fairy Wings, Blood Meal, Crow Feathers.</h5>
+
+<p>Stir to a boil. Pour the finished potion on your victim. The prankee <span class="word"><%=
+@cverbs.sample.name %></span> as your potion changes this person into a <span class="word"><%= @cnouns.sample.name %> </span> creature, your victim <span class="word"> <%= @cadjectives.sample.name %></span> while you are overcome with glee.</p>
+The <span class="word"> <%= @cadjectives.sample.name %>, <%= @cadjectives.sample.name %> </span> state in which you have left your victim should only last a day or two.</p>
+
+
+<!-- <h4>The Computer's Total</h4> -->
+<div class="w_total text-pop-up-bottom">
 <%= @witch_cpu_total %>
+</div>
+</div>
+</div>
+
+<div class="start-again-link">
+<a><%= button_to 'START AGAIN', home_path, method: :get, class: 'waves-effect waves-light btn-large btn btn-small' %></a>
+<!-- <a class="waves-effect waves-light btn-large">Button</a> -->
+</div>
+</body>
