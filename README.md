@@ -16,6 +16,6 @@ If a user runs out of time and does not choose words from all dropdowns, the sel
  * Run `bundle install` and `rails s` to display the game. Typically the default address will be: localhost:3000
  *From here, explore the app and enjoy playing the game.
  
-   
+ #### Link to demo: https://youtu.be/xYA5RcWfA90 
     
  Have Fun!
